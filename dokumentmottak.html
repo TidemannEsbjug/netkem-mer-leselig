@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="noindex,nofollow" name="robots"/>
+<title>Dokumentmottak | Netkem AS</title>
+<meta content="Sikkert dokumentmottak for opplasting av offisielle dokumenter til Netkem AS." name="description"/>
+<link href="assets/css/document-intake.css" rel="stylesheet"/>
+<link href="assets/img/favicon.png" rel="icon" type="image/png"/>
+</head>
+<body>
+<header class="intake-header">
+  <a aria-label="Netkem AS" class="brand" href="index.html">
+    <img alt="" height="34" src="assets/img/logo.png" width="104"/>
+    <span>Dokumentmottak</span>
+  </a>
+  <div aria-live="polite" class="link-state" data-state="checking" id="link-state">Kontrollerer mottak</div>
+</header>
+
+<main class="intake-shell">
+  <section class="intro">
+    <div class="intro__text">
+      <span class="eyebrow">Netkem AS</span>
+      <h1>Send dokumenter direkte til Netkem</h1>
+      <p>Last opp offisielle dokumenter når mottaket er åpnet. Du trenger ingen konto, og Netkem får beskjed når filene er mottatt.</p>
+    </div>
+    <dl class="facts" aria-label="Mottaksdetaljer">
+      <div>
+        <dt>Mottak</dt>
+        <dd id="link-label">Offisielle dokumenter</dd>
+      </div>
+      <div>
+        <dt>Varsel</dt>
+        <dd>Sendes ved fullført opplasting</dd>
+      </div>
+      <div>
+        <dt>Organisasjon</dt>
+        <dd>983 922 333</dd>
+      </div>
+    </dl>
+  </section>
+
+  <section class="intake-layout" aria-label="Opplasting">
+    <form class="sender" id="upload-form" novalidate>
+      <fieldset class="sender__fieldset">
+        <legend>Avsender</legend>
+        <div class="form-grid">
+          <label>
+            <span>Firma <b aria-hidden="true">*</b></span>
+            <input autocomplete="organization" id="sender-company" name="company" required type="text"/>
+          </label>
+          <label>
+            <span>Kontaktperson <b aria-hidden="true">*</b></span>
+            <input autocomplete="name" id="sender-name" name="name" required type="text"/>
+          </label>
+          <label>
+            <span>E-post</span>
+            <input autocomplete="email" id="sender-email" name="email" type="email"/>
+          </label>
+          <label>
+            <span>Referanse</span>
+            <input autocomplete="off" id="sender-reference" maxlength="120" name="reference" placeholder="F.eks. tilbud, ordre eller anlegg" type="text"/>
+          </label>
+        </div>
+      </fieldset>
+
+      <section class="drop" id="drop-zone">
+        <input class="drop__input" id="file-input" multiple type="file"/>
+        <label class="drop__target" for="file-input">
+          <svg aria-hidden="true" fill="none" height="42" viewBox="0 0 42 42" width="42">
+            <path d="M21 6v20m0-20 8 8m-8-8-8 8" stroke="currentColor" stroke-linecap="square" stroke-width="2"/>
+            <path d="M9 25v8h24v-8" stroke="currentColor" stroke-linejoin="round" stroke-width="2"/>
+          </svg>
+          <strong>Dra dokumenter hit</strong>
+          <span>eller velg filer fra maskinen</span>
+          <small>PDF, Word, Excel, bilder eller ZIP. Maks <span id="max-size">50 MB</span> per fil.</small>
+        </label>
+        <div class="drop__actions">
+          <button class="button button--primary" disabled id="upload-button" type="submit">Last opp</button>
+          <button aria-label="Tøm filliste" class="icon-button" disabled id="clear-button" title="Tøm filliste" type="button">
+            <svg aria-hidden="true" fill="none" height="18" viewBox="0 0 18 18" width="18">
+              <path d="M4 5h10M7 5V3h4v2m-6 0 1 10h6l1-10" stroke="currentColor" stroke-linecap="square" stroke-linejoin="round" stroke-width="1.6"/>
+            </svg>
+          </button>
+        </div>
+        <p aria-live="polite" class="message" id="status-message" role="status"></p>
+      </section>
+    </form>
+
+    <aside class="queue" aria-labelledby="queue-title">
+      <div class="queue__head">
+        <h2 id="queue-title">Filer i denne innsendingen</h2>
+        <span id="file-count">0</span>
+      </div>
+      <p class="queue__empty" id="empty-state">Ingen filer valgt ennå.</p>
+      <ul class="file-list" id="file-list"></ul>
+    </aside>
+  </section>
+</main>
+
+<footer class="intake-footer">
+  <span>Netkem AS</span>
+  <a href="mailto:post@netkem.no">post@netkem.no</a>
+  <a href="tel:+4766808215">66 80 82 15</a>
+</footer>
+
+<script defer src="assets/js/document-intake.js"></script>
+</body>
+</html>

@@ -8,15 +8,15 @@
 <meta content="Netkem AS utvikler, produserer og leverer impregnerings- og coatingprodukter, notrensemidler, desinfeksjonsmidler og notvaskemaskiner til akvakulturnæringen siden 2001." name="description"/>
 <link href="../assets/css/main.css" rel="stylesheet"/>
 <link href="../assets/img/favicon.png" rel="icon" type="image/png"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet"/>
 <link href="/index.html" hreflang="nb" rel="alternate"/><link href="/en/index.html" hreflang="en" rel="alternate"/><link href="/es/index.html" hreflang="es" rel="alternate"/><link href="/index.html" hreflang="x-default" rel="alternate"/><link href="/en/index.html" rel="canonical"/></head>
-<body class="has-light-hero">
+<body>
 <!-- ======================== HEADER ======================== -->
 <header class="site-header">
-<div class="container site-header__inner">
-<a class="site-header__brand" href="index.html">
-<span aria-label="NetKem AS" class="brand-text">Net<span class="brand-text__k">K</span>em<span class="brand-text__as"> AS</span></span>
-<span class="site-header__tagline" data-i18n="top.tagline">Coatings &amp; net impregnation<br/>for aquaculture</span>
-</a>
+<div class="container site-header__inner site-header__inner--center">
+<a class="site-header__brand" href="index.html"><img class="site-header__logo site-header__logo--light" src="../assets/img/Logo-Netkem-AS-white.png" alt="NetKem AS" width="396" height="96"/><img class="site-header__logo site-header__logo--dark" src="../assets/img/Logo-Netkem-AS-dark.png" alt="" aria-hidden="true" width="396" height="96"/></a>
 <nav aria-label="Main menu" class="site-nav" data-i18n-attr="aria-label:nav.menu">
 <ul class="site-nav__list">
 <li><a class="site-nav__link" data-i18n="nav.home" data-nav-link="index.html" href="index.html">Home</a></li>
@@ -67,112 +67,221 @@
 </ul>
 </nav>
 <!-- ======================== HERO ======================== -->
-<section class="hero hero--split-illustration">
+<section class="hero hero--photo-first">
+<img alt="" aria-hidden="true" class="hero__image" decoding="async" fetchpriority="high" src="../assets/img/hero-fjord-v3.jpg"/>
 <div class="container">
 <div class="hero__grid">
-<div class="hero__content">
-<span class="eyebrow" data-i18n="eb.aqua_since">Aquaculture · since 2001</span>
-<h1 class="hero__title" data-i18n="home.hero.title">Sustainable <em>coatings</em> and net impregnation for the aquaculture industry</h1>
-<p class="hero__lead" data-i18n="home.hero.lead">Netkem AS develops and manufactures net impregnation, net wash, disinfectants and supporting technical equipment — developed in collaboration with leading aquaculture research institutes.</p>
+<div>
+<h1 class="hero__title" data-i18n="home.hero.title">The safe choice</h1>
+<p class="hero__lead" data-i18n="home.hero.lead">Through 25 years in aquaculture, few products have protected and maintained more nets in Norwegian waters than ours, including the most widely used net impregnation of all time. Backed by leading research, we ensure safe operations and healthy fish, season after season.</p>
 <div class="hero__cta-row">
 <a class="btn btn--primary" href="products.html">
 <span data-i18n="btn.see_all">See all products</span>
 <svg aria-hidden="true" class="btn__arrow" fill="none" viewbox="0 0 16 10"><path d="M1 5h13M10 1l4 4-4 4" stroke="currentColor" stroke-linecap="square" stroke-width="1.6"></path></svg>
 </a>
-<a class="btn btn--ghost" data-i18n="btn.contact" href="contact.html">Contact us</a>
-</div>
-<div class="hero__meta">
-<div class="hero__meta-item">
-<span class="label" data-i18n="home.hero.meta_etabl_l">Established</span>
-<span class="value" data-i18n="home.hero.meta_etabl_v">2001</span>
-</div>
-<div class="hero__meta-item">
-<span class="label" data-i18n="tag.bpr">BPR-approved</span>
-<span class="value" data-i18n="home.hero.meta_bpr_v">Until 2033</span>
-</div>
-<div class="hero__meta-item">
-<span class="label" data-i18n="home.hero.meta_org_l">Org. no.</span>
-<span class="value" data-i18n="home.hero.meta_org_v">983 922 333</span>
+<a class="btn btn--ghost-light" data-i18n="btn.contact" href="contact.html">Contact us</a>
 </div>
 </div>
 </div>
-<figure class="hero__visual hero__visual--cutout">
-<img alt="Illustrated aquaculture site with a net pen and fish underwater" decoding="async" fetchpriority="high" src="../assets/img/hero-net-cutout-light.png"/>
-<figcaption class="hero__visual-caption"><span data-i18n="home.hero.photo_caption">Aquaculture site · Norwegian fjord</span></figcaption>
-</figure>
 </div>
-</div>
-</section>
-<!-- ======================== TRUST STRAP ======================== -->
-<section class="strap">
-<div class="container">
-<div class="strap__grid">
-<div class="strap__item reveal reveal--delay-1">
-<span class="strap__item-num count-up" data-count="25" data-count-suffix="+">25+</span>
-<div class="strap__item-label"><small data-i18n="kobber.facts.f3_l">Years in industry</small><strong data-i18n="home.strap.years_v">Since 2001</strong></div>
-</div>
-<div class="strap__item reveal reveal--delay-2">
-<span class="strap__item-num count-up" data-count="8">8</span>
-<div class="strap__item-label"><small data-i18n="home.strap.products_l">Core products</small><strong>Wax, polish, vask &amp; desinfeksjon</strong></div>
-</div>
-<div class="strap__item reveal reveal--delay-3">
-<span class="strap__item-num" data-i18n="home.strap.bpr_n">EU</span>
-<div class="strap__item-label"><small data-i18n="home.strap.bpr_l">BPR approval</small><strong data-i18n="home.hero.meta_bpr_v">Until 2033</strong></div>
-</div>
-<div class="strap__item reveal reveal--delay-4">
-<span class="strap__item-num" data-i18n="home.strap.fou_n">R&amp;D</span>
-<div class="strap__item-label"><small data-i18n="home.strap.fou_l">Partnerships</small><strong data-i18n="home.strap.fou_v">Leading aquaculture research</strong></div>
-</div>
-</div>
-</div>
+<a class="hero__scroll" href="#produktvelger" aria-label="Scroll down"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"></path></svg></a>
 </section>
 <!-- ======================== FEATURED PRODUCTS ======================== -->
-<section class="section section--surface">
+<section class="section section--surface" id="produktvelger">
+<style>
+#produktvelger .section-head__text h2{font-family:'Playfair Display',Georgia,serif;font-weight:500}
+.pv-controls{display:flex;flex-wrap:wrap;align-items:center;gap:var(--sp-5) var(--sp-6);margin-bottom:var(--sp-6)}
+.pv-radios{display:flex;flex-wrap:wrap;gap:10px;border:0;padding:0;margin:0}
+.pv-radio{display:inline-flex;align-items:center;gap:10px;padding:11px 16px;border:1px solid var(--c-border);border-radius:var(--radius-md);background:#fff;cursor:pointer;font-family:var(--font-sans);font-size:var(--fs-sm);font-weight:600;color:var(--c-navy-800);line-height:1.2;transition:border-color var(--transition),background var(--transition),box-shadow var(--transition)}
+.pv-radio:hover{border-color:var(--c-navy-600)}
+.pv-radio.is-checked{border-color:var(--c-navy-800);background:var(--c-navy-800);color:#fff;box-shadow:var(--shadow-sm)}
+.pv-radio input{position:absolute;opacity:0;width:0;height:0}
+.pv-dot{flex:none;width:18px;height:18px;border-radius:50%;border:2px solid var(--c-border-strong);position:relative;transition:border-color var(--transition)}
+.pv-radio.is-checked .pv-dot{border-color:#fff}
+.pv-radio.is-checked .pv-dot::after{content:"";position:absolute;inset:3px;border-radius:50%;background:#fff}
+.pv-radio input:focus-visible~.pv-dot{outline:2px solid var(--c-green-500);outline-offset:2px}
+.pv-radio small{display:block;font-size:11px;font-weight:500;color:var(--c-text-soft);text-transform:none;margin-top:1px}
+.pv-radio.is-checked small{color:rgba(255,255,255,.72)}
+.pv-check{display:inline-flex;align-items:center;gap:10px;cursor:pointer;font-family:var(--font-sans);font-size:var(--fs-sm);font-weight:600;color:var(--c-navy-800);user-select:none}
+.pv-check input{position:absolute;opacity:0;width:0;height:0}
+.pv-box{flex:none;width:20px;height:20px;border-radius:var(--radius-sm);border:2px solid var(--c-border-strong);background:#fff;position:relative;transition:background var(--transition),border-color var(--transition)}
+.pv-check.is-checked .pv-box{background:var(--c-green-600);border-color:var(--c-green-600)}
+.pv-check.is-checked .pv-box::after{content:"";position:absolute;left:5px;top:1px;width:6px;height:11px;border:solid #fff;border-width:0 2px 2px 0;transform:rotate(45deg)}
+.pv-check input:focus-visible~.pv-box{outline:2px solid var(--c-green-500);outline-offset:2px}
+.pv-badge{position:absolute;top:12px;right:12px;display:inline-flex;align-items:center;gap:4px;background:var(--c-green-100);color:var(--c-green-800);font-size:11px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;padding:5px 9px;border-radius:var(--radius-sm);box-shadow:0 1px 2px rgba(7,24,43,.12)}
+.pv-badge svg{width:12px;height:12px}
+.pv-item.is-hidden{display:none}
+.product-card__media--icon{display:flex;align-items:center;justify-content:center}
+.product-card__media--icon svg{width:58px;height:58px;stroke:var(--c-teal-600);stroke-width:1.4}
+.product-card__media--contain{background:#fff;display:flex;align-items:center;justify-content:center}
+.product-card__media--contain img{object-fit:contain;padding:8px;mix-blend-mode:multiply}
+</style>
 <div class="container">
 <div class="section-head reveal">
 <div class="section-head__text">
-<span class="eyebrow" data-i18n="eb.featured">Featured products</span>
-<h2 data-i18n="home.feat.h">A selection from the portfolio</h2>
-<p data-i18n="home.feat.lead">The full range is developed for Nordic conditions and meets EU requirements for health, environment and safety.</p>
+<h2>Our Products</h2>
 </div>
-<a class="btn btn--ghost" href="products.html">
-<span data-i18n="btn.see_all">See all products</span>
+</div>
+
+<form class="pv-controls reveal">
+<fieldset class="pv-radios">
+<legend style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap">Washing strategy</legend>
+<label class="pv-radio"><input type="radio" name="pv-track" value="coating"/><span class="pv-dot" aria-hidden="true"></span><span>Coating</span></label>
+<label class="pv-radio"><input type="radio" name="pv-track" value="biocid"/><span class="pv-dot" aria-hidden="true"></span><span>Impregnation</span></label>
+</fieldset>
+<label class="pv-check"><input type="checkbox" id="pv-eco"/><span class="pv-box" aria-hidden="true"></span><span>Organic farming</span></label>
+</form>
+<div class="products-grid" id="pv-grid">
+<a class="product-card pv-item" data-track="coating" data-eco="true" href="products/netpolish-np.html">
+<div class="product-card__media">
+<span class="product-card__tag">Coating</span>
+<span class="pv-badge"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>Organic</span>
+<img alt="Netpolish NP" src="../assets/img/products/netpolish-np-molekyl.jpg"/>
+</div>
+<div class="product-card__body">
+<h3 class="product-card__title">Netpolish NP</h3>
+<p class="product-card__sub">Biocide-free coating that protects netting against mechanical wear and UV. Withstands frequent washing at sea and is approved for organic production.</p>
+<span class="product-card__cta">Read more →</span>
+</div>
+</a>
+<a class="product-card pv-item" data-track="biocid" data-eco="false" href="products/netwax-ni-3.html">
+<div class="product-card__media">
+<span class="product-card__tag">Net impregnation</span>
+<img alt="Netwax NI 3" src="../assets/img/products/netwax-ni-3-molekyl.jpg"/>
+</div>
+<div class="product-card__body">
+<h3 class="product-card__title">Netwax NI 3</h3>
+<p class="product-card__sub">Effective standard impregnation that reduces fouling, eases cleaning and prevents drying out. Safe on nylon and Dyneema.</p>
+<span class="product-card__cta">Read more →</span>
+</div>
+</a>
+<a class="product-card pv-item" data-track="biocid" data-eco="false" href="products/netwax-ni-gold.html">
+<div class="product-card__media">
+<span class="product-card__tag">Net impregnation</span>
+<img alt="Netwax NI Gold" src="../assets/img/products/netwax-ni-gold-molekyl.jpg"/>
+</div>
+<div class="product-card__body">
+<h3 class="product-card__title">Netwax NI Gold</h3>
+<p class="product-card__sub">Our most effective impregnation for sites with high fouling pressure. BPR-approved by the Norwegian Environment Agency until 2033.</p>
+<span class="product-card__cta">Read more →</span>
+</div>
+</a>
+<a class="product-card pv-item" data-track="biocid" data-eco="true" href="products/netwax-e5-greenline.html">
+<div class="product-card__media">
+<span class="product-card__tag">Green license</span>
+<span class="pv-badge"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>Organic</span>
+<img alt="Netwax E5 Greenline" src="../assets/img/products/netwax-e5-greenline-molekyl.jpg"/>
+</div>
+<div class="product-card__body">
+<h3 class="product-card__title">Netwax E5 Greenline</h3>
+<p class="product-card__sub">ECOCERT-approved and OMRI-listed. Controlled leaching developed for green licenses and organic aquaculture.</p>
+<span class="product-card__cta">Read more →</span>
+</div>
+</a>
+<a class="product-card pv-item" data-track="biocid" data-eco="true" href="products/netwax-e8-greenline.html">
+<div class="product-card__media">
+<span class="product-card__tag">Green license</span>
+<span class="pv-badge"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>Organic</span>
+<img alt="Netwax E8 Greenline" src="../assets/img/products/netwax-e8-greenline-molekyl.jpg"/>
+</div>
+<div class="product-card__body">
+<h3 class="product-card__title">Netwax E8 Greenline</h3>
+<p class="product-card__sub">Powerful impregnation approved for organic agriculture and BPR-approved until 2033. For demanding green licenses.</p>
+<span class="product-card__cta">Read more →</span>
+</div>
+</a>
+<a class="product-card pv-item" data-track="any" href="products/netkem-net-wash.html">
+<div class="product-card__media">
+<span class="product-card__tag">Net cleaning</span>
+<img alt="NetKem Net Wash" src="../assets/img/products/netkem-notvask-molekyl.jpg"/>
+</div>
+<div class="product-card__body">
+<h3 class="product-card__title">NetKem Net Wash</h3>
+<p class="product-card__sub">Effective cleaner that dissolves fouling and deposits before re-impregnation. Relevant whatever your washing strategy.</p>
+<span class="product-card__cta">Read more →</span>
+</div>
+</a>
+<a class="product-card pv-item" data-track="any" href="products/grotanol-3025.html">
+<div class="product-card__media">
+<span class="product-card__tag">Disinfection</span>
+<img alt="Grotanol 3025" src="../assets/img/products/grotanol-3025-molekyl.jpg"/>
+</div>
+<div class="product-card__body">
+<h3 class="product-card__title">Grotanol 3025</h3>
+<p class="product-card__sub">Disinfection of nets and equipment for good biosecurity between production cycles.</p>
+<span class="product-card__cta">Read more →</span>
+</div>
+</a>
+<a class="product-card pv-item" data-track="any" href="products/gigant-net-washing-machine.html">
+<div class="product-card__media product-card__media--contain">
+<span class="product-card__tag">Technical equipment</span>
+<img alt="Gigant Universal net washing machine – patented design" src="../assets/img/gigant-patent.jpg"/>
+</div>
+<div class="product-card__body">
+<h3 class="product-card__title">Gigant Net Washing Machine</h3>
+<p class="product-card__sub">Robust, purpose-built washing machine for gentle and efficient cleaning of netting, with a patented design.</p>
+<span class="product-card__cta">Read more →</span>
+</div>
+</a>
+</div>
+</div>
+<script>
+(function(){
+  var sec=document.getElementById('produktvelger');
+  if(!sec)return;
+  var radios=sec.querySelectorAll('input[name="pv-track"]');
+  var items=sec.querySelectorAll('.pv-item');
+  var eco=sec.querySelector('#pv-eco');
+  var ecoLabel=eco.closest('.pv-check');
+  function apply(){
+    var track=null;
+    radios.forEach(function(r){
+      r.closest('.pv-radio').classList.toggle('is-checked',r.checked);
+      if(r.checked)track=r.value;
+    });
+    ecoLabel.classList.toggle('is-checked',eco.checked);
+    items.forEach(function(it){
+      var t=it.getAttribute('data-track');
+      if(t==='any'){it.classList.remove('is-hidden');return;}
+      var okTrack=(track===null||t===track);
+      var okEco=(!eco.checked||it.getAttribute('data-eco')==='true');
+      it.classList.toggle('is-hidden',!(okTrack&&okEco));
+    });
+  }
+  radios.forEach(function(r){r.addEventListener('change',apply);});
+  eco.addEventListener('change',apply);
+  apply();
+})();
+</script>
+</section>
+<!-- ======================== BPR-BÅND ======================== -->
+<section class="bpr-band">
+<style>
+.bpr-band{position:relative;display:flex;align-items:center;min-height:clamp(480px,72vh,760px);overflow:hidden;background:#07182b;color:#fff;isolation:isolate}
+.bpr-band__img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:72% center;z-index:0}
+.bpr-band::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(7,24,43,.88) 0%,rgba(7,24,43,.62) 38%,rgba(7,24,43,.18) 66%,rgba(7,24,43,0) 100%)}
+.bpr-band>.container{position:relative;z-index:2;width:100%}
+.bpr-band__content{max-width:600px;padding:clamp(56px,8vw,104px) 0}
+.bpr-band__eyebrow{display:inline-block;text-transform:uppercase;letter-spacing:.14em;font-size:12px;font-weight:600;color:#2fbd5e;margin-bottom:16px}
+.bpr-band__title{font-family:'Playfair Display',Georgia,serif;font-weight:500;font-size:clamp(2.1rem,4.8vw,3.6rem);line-height:1.08;margin:0 0 18px;color:#fff}
+.bpr-band__lead{font-size:clamp(1rem,1.5vw,1.18rem);line-height:1.62;color:rgba(255,255,255,.9);margin:0 0 30px;max-width:52ch}
+.bpr-band__badges{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 30px}
+.bpr-band__badge{display:inline-flex;align-items:center;gap:7px;font-size:13px;font-weight:600;color:#cfeede;background:rgba(47,189,94,.14);border:1px solid rgba(47,189,94,.4);padding:8px 14px;border-radius:99px}
+.bpr-band__badge svg{width:14px;height:14px;flex:none}
+</style>
+<img class="bpr-band__img" src="../assets/img/bpr-notlin.jpg" alt="" aria-hidden="true" decoding="async" loading="lazy"/>
+<div class="container">
+<div class="bpr-band__content">
+<span class="bpr-band__eyebrow">Documented and approved</span>
+<h2 class="bpr-band__title">BPR-approved until 2033</h2>
+<p class="bpr-band__lead">Our biocidal impregnations are assessed and approved by the Norwegian Environment Agency under the EU Biocidal Products Regulation (BPR). The active substance is documented for health, safety and the environment. The approval is valid until June 2033.</p>
+<div class="bpr-band__badges">
+<span class="bpr-band__badge"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 5v6c0 5 3.5 8.5 8 11 4.5-2.5 8-6 8-11V5l-8-3Z"></path><path d="m9 12 2 2 4-4"></path></svg>Approved by the Norwegian Environment Agency</span>
+<span class="bpr-band__badge"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 5v6c0 5 3.5 8.5 8 11 4.5-2.5 8-6 8-11V5l-8-3Z"></path><path d="m9 12 2 2 4-4"></path></svg>Free from PFAS and microplastics</span>
+</div>
+<a class="btn btn--primary" href="copper.html">
+<span>Read about biocides and copper</span>
 <svg aria-hidden="true" class="btn__arrow" fill="none" viewbox="0 0 16 10"><path d="M1 5h13M10 1l4 4-4 4" stroke="currentColor" stroke-linecap="square" stroke-width="1.6"></path></svg>
-</a>
-</div>
-<div class="products-grid">
-<a class="product-card reveal reveal--delay-1" href="products/netwax-ni-gold.html">
-<div class="product-card__media">
-<span class="product-card__tag" data-i18n="dd.netimp">Net impregnation</span>
-<img alt="Netwax NI Gold" src="../assets/img/products/netwax-ni-gold-illustrated.jpg"/>
-</div>
-<div class="product-card__body">
-<h3 class="product-card__title" data-i18n="pn.nigold">Netwax NI Gold</h3>
-<p class="product-card__sub" data-i18n="home.feat.nigold_sub">Highly effective net impregnation that reduces fouling, eases cleaning and prevents drying out.</p>
-<span class="product-card__cta" data-i18n="btn.read_more_arrow">Read more →</span>
-</div>
-</a>
-<a class="product-card reveal reveal--delay-2" href="products/netwax-e5-greenline.html">
-<div class="product-card__media">
-<span class="product-card__tag" data-i18n="home.feat.green_tag">Green licence</span>
-<img alt="Netwax E5 Greenline" src="../assets/img/products/netwax-e5-greenline-illustrated.jpg"/>
-</div>
-<div class="product-card__body">
-<h3 class="product-card__title" data-i18n="pn.e5">Netwax E5 Greenline</h3>
-<p class="product-card__sub" data-i18n="home.feat.e5_sub">ECOCERT-approved and OMRI-listed. Developed for green licences with controlled leaching.</p>
-<span class="product-card__cta" data-i18n="btn.read_more_arrow">Read more →</span>
-</div>
-</a>
-<a class="product-card reveal reveal--delay-3" href="products/netpolish-np.html">
-<div class="product-card__media">
-<span class="product-card__tag" data-i18n="home.core.c2_t">Coating</span>
-<img alt="Netpolish NP" src="../assets/img/products/netpolish-np-illustrated.jpg"/>
-</div>
-<div class="product-card__body">
-<h3 class="product-card__title" data-i18n="pn.np">Netpolish NP</h3>
-<p class="product-card__sub" data-i18n="home.feat.np_sub">Coating that protects the net against mechanical wear and UV. Meets purity standards from FDA and BfR.</p>
-<span class="product-card__cta" data-i18n="btn.read_more_arrow">Read more →</span>
-</div>
 </a>
 </div>
 </div>
@@ -182,10 +291,10 @@
 <div class="container">
 <div class="split">
 <div class="reveal">
-<span class="eyebrow" data-i18n="eb.about_netkem">About Netkem</span>
-<h2>Faglig dybde fra Mobil Oil &amp; ExxonMobil — anvendt på havbruk</h2>
-<p class="lead" data-i18n="home.about.lead">NetKem AS was founded in 2001 by Øistein Antonsen, who had worked with these products for many years at Mobil Oil and later ExxonMobil. The expertise is preserved, and new products are continually under development.</p>
-<p data-i18n="home.about.body">The company maintains close partnerships with leading aquaculture research institutes, and supplies both chemical products and technical equipment such as net washing machines.</p>
+<span class="eyebrow" data-i18n="eb.about_netkem">About NetKem</span>
+<h2>Expertise from Mobil Oil &amp; ExxonMobil — applied to aquaculture</h2>
+<p class="lead" data-i18n="home.about.lead">NetKem AS was founded in 2001 by Øistein Antonsen, who worked with these products for many years at <a href="https://www.mobil.com/" target="_blank" rel="noopener">Mobil Oil</a> and later <a href="https://corporate.exxonmobil.com/" target="_blank" rel="noopener">ExxonMobil</a>. The expertise remains, and new products are continuously under development.</p>
+<p data-i18n="home.about.body">The company collaborates extensively with leading aquaculture research institutes, and supplies both chemical products and technical equipment such as net washing machines.</p>
 <a class="btn btn--ghost" href="about.html" style="margin-top: var(--sp-3);">
 <span data-i18n="btn.about_more">More about us</span>
 <svg aria-hidden="true" class="btn__arrow" fill="none" viewbox="0 0 16 10"><path d="M1 5h13M10 1l4 4-4 4" stroke="currentColor" stroke-linecap="square" stroke-width="1.6"></path></svg>
@@ -194,12 +303,12 @@
 <div class="reveal reveal--delay-2">
 <div class="figure">
 <div style="aspect-ratio: 4/3; position: relative; overflow: hidden;">
-<img alt="Illustrated aquaculture site in a Norwegian fjord" src="../assets/img/hero-original-illustrated.jpg" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover;"/>
+<img alt="Red impregnated netting up close" src="../assets/img/hero-secondary.jpg" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover;"/>
 </div>
 <div style="padding: var(--sp-5); background: #fff; display:grid; grid-template-columns: 1fr 1fr; gap: var(--sp-4); border-top: 1px solid var(--c-border);">
 <div>
 <small data-i18n="home.about.hq_l" style="display:block; font-size:11px; text-transform:uppercase; letter-spacing:.1em; color: var(--c-text-muted); margin-bottom:4px;">Head office</small>
-<strong style="color: var(--c-navy-800);"><span data-i18n="addr.street">Slalåmveien 1</span><br/><span data-i18n="addr.city">1410 Kolbotn, Norway</span></strong>
+<strong style="color: var(--c-navy-800);"><span data-i18n="addr.street">Slalåmveien 1</span><br/><span data-i18n="addr.city">1410 Kolbotn</span></strong>
 </div>
 <div>
 <small data-i18n="home.hero.meta_etabl_l" style="display:block; font-size:11px; text-transform:uppercase; letter-spacing:.1em; color: var(--c-text-muted); margin-bottom:4px;">Established</small>
@@ -356,7 +465,7 @@
 </div>
 <div class="site-footer__bottom">
 <span>© <span data-year="">2026</span> Netkem AS · Org.nr 983 922 333 · ISO 9001:2015 · ISO 14001:2015</span>
-<span><a data-i18n="foot.privacy" href="privacy.html">Privacy</a> · <a data-i18n="foot.transparency" href="../assets/docs/redegjorelse-apenhetsloven.pdf" rel="noopener" target="_blank">Transparency Act</a></span>
+<span><a data-i18n="foot.privacy" href="privacy.html">Privacy</a> · <a data-i18n="foot.transparency" href="/assets/docs/redegjorelse-apenhetsloven.pdf" rel="noopener" target="_blank">Transparency Act</a></span>
 </div>
 </div>
 </footer>

@@ -209,8 +209,9 @@
   --container-narrow: 960px;
 
   /* Typography */
-  --font-sans: "IBM Plex Sans", "Helvetica Neue", Arial, system-ui, sans-serif;
+  --font-sans: "Inter", "Helvetica Neue", Arial, system-ui, sans-serif;
   --font-serif: "IBM Plex Serif", "Source Serif Pro", Georgia, serif;
+  --font-display: "Familjen Grotesk", "Inter", system-ui, sans-serif;
   --fs-xs: 12px;
   --fs-sm: 14px;
   --fs-base: 16px;
@@ -257,7 +258,7 @@ h1,h2,h3,h4 {
   line-height: 1.18;
 }
 h1, h2 {
-  font-family: var(--font-serif);
+  font-family: var(--font-display);
   font-weight: 600;
   letter-spacing: 0;
 }
@@ -285,7 +286,9 @@ li { margin-bottom: var(--sp-2); }
 .container {
   max-width: var(--container);
   margin: 0 auto;
-  padding: 0 var(--sp-5);
+  /* Fluid side gutters — grow with the viewport so content doesn't hug the
+     edge on mid-size screens below the max-width, capped on large screens. */
+  padding: 0 clamp(24px, 4.5vw, 68px);
 }
 .container--narrow { max-width: var(--container-narrow); }
 
@@ -323,6 +326,7 @@ li { margin-bottom: var(--sp-2); }
 
 /* ---------- Buttons --------------------------------------------------- */
 .btn {
+  font-family: var(--font-display);
   display: inline-flex;
   align-items: center;
   gap: var(--sp-3);
@@ -382,11 +386,10 @@ li { margin-bottom: var(--sp-2); }
               backdrop-filter 240ms;
 }
 .site-header::before {
-  /* subtle dark gradient for nav legibility over hero/banner */
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(7,24,43,.45) 0%, rgba(7,24,43,.1) 60%, transparent 100%);
+  background: none;
   pointer-events: none;
   transition: opacity 240ms cubic-bezier(.2,.6,.2,1);
 }
@@ -404,12 +407,26 @@ li { margin-bottom: var(--sp-2); }
   width: 100%;
   gap: var(--sp-6);
 }
+/* Menu stays centred in the full width; the logo is taken out of flow and
+   pinned to the top-left corner, so it never affects the centring. */
+.site-header__inner--center { justify-content: center; }
+/* Nudge the menu 6px down over the hero; snap back to normal in the white scrolled bar. */
+.site-header__inner { transition: transform .24s ease; }
+.site-header:not(.is-scrolled) .site-header__inner { transform: translateY(6px); }
 .site-header__brand {
+  position: absolute;
+  left: clamp(20px, 4.5vw, 68px);
+  top: 50%;
+  transform: translateY(-50%);
   display: flex;
   align-items: center;
   gap: var(--sp-3);
 }
-.site-header__brand img { height: 30px; width: auto; }
+.site-header__logo { height: 32px; width: auto; display: block; }
+/* White logo over the hero; swap to the dark version (dark text, green droplet) on the scrolled white bar. */
+.site-header__logo--dark { display: none; }
+.site-header.is-scrolled .site-header__logo--light { display: none; }
+.site-header.is-scrolled .site-header__logo--dark { display: block; }
 
 /* Brand wordmark — replaces the PNG logo */
 .brand-text {
@@ -675,11 +692,101 @@ li { margin-bottom: var(--sp-2); }
   z-index: 1;
   pointer-events: none;
 }
+.hero--photo-first {
+  display: flex;
+  align-items: center;
+  height: 100vh;
+  height: 100svh;
+  min-height: 600px;
+  padding: clamp(104px, 13vw, 150px) 0 clamp(88px, 10vw, 120px);
+}
+.hero--photo-first > .container { grid-row: auto; transform: translateY(calc(-1vh + 9px)); padding-inline: clamp(34px, 6.5vw, 68px); }
+/* Subtle scroll cue at the foot of the full-height hero */
+.hero__scroll {
+  position: absolute;
+  left: 50%;
+  bottom: clamp(16px, 3.4vh, 36px);
+  transform: translateX(-50%);
+  z-index: 3;
+  display: inline-flex;
+  padding: 6px;
+  color: rgba(255,255,255,.72);
+  transition: color .2s ease;
+}
+.hero__scroll:hover { color: #fff; }
+.hero__scroll svg {
+  width: 28px; height: 28px;
+  animation: heroScrollCue 2.2s cubic-bezier(.4,0,.2,1) infinite;
+}
+@keyframes heroScrollCue {
+  0%, 100% { transform: translateY(0); opacity: .55; }
+  50% { transform: translateY(7px); opacity: 1; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero__scroll svg { animation: none; opacity: .8; }
+}
+/* ---------- Hero arrival — calm, minimal, matched to the still fjord ----------
+   The photo is mirror-still water: nothing should bounce or rush.
+   Image settles like a drone easing to hover; text lifts like mist off water. */
+@keyframes heroImageSettle {
+  from { transform: scale(1.04); }
+  to   { transform: scale(1); }
+}
+@keyframes heroMistRise {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes heroSoftFade {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+.hero--photo-first .hero__image {
+  animation: heroImageSettle 6.5s cubic-bezier(.16,.55,.22,1) both;
+}
+.hero--photo-first .hero__title,
+.hero--photo-first .hero__lead,
+.hero--photo-first .hero__cta-row {
+  animation: heroMistRise 1.2s cubic-bezier(.22,.61,.21,1) both;
+}
+.hero--photo-first .hero__title   { animation-delay: .15s; }
+.hero--photo-first .hero__lead    { animation-delay: .38s; }
+.hero--photo-first .hero__cta-row { animation-delay: .6s; }
+.hero--photo-first .hero__scroll  { animation: heroSoftFade 1.2s ease 1.5s both; }
+@media (prefers-reduced-motion: reduce) {
+  .hero--photo-first .hero__image,
+  .hero--photo-first .hero__title,
+  .hero--photo-first .hero__lead,
+  .hero--photo-first .hero__cta-row,
+  .hero--photo-first .hero__scroll { animation: none; }
+}
+.hero__brand {
+  display: inline-block;
+  margin-bottom: 8px;
+  text-decoration: none;
+  line-height: 1;
+}
+.hero__brand-img {
+  height: clamp(38px, 4.2vw, 52px);
+  width: auto;
+  display: block;
+  filter: drop-shadow(0 2px 10px rgba(0,0,0,.4));
+}
+.hero--photo-first .hero__image {
+  /* Zoom + composition are baked into the cropped image (full-res, no CSS
+     upscaling), so no transform here — just a focal point on the pens. */
+  object-position: 50% 50%;
+  /* Richer colour + lifted highlights. */
+  filter: saturate(1.18) brightness(1.32) contrast(1.12);
+}
+/* Short viewports: bias toward the pens so they stay in frame. */
+@media (max-height: 620px) {
+  .hero--photo-first .hero__image { object-position: 50% 58%; }
+}
 .hero--photo-first::before {
   background:
-    linear-gradient(90deg, rgba(7,24,43,.78) 0%, rgba(7,24,43,.48) 34%, rgba(7,24,43,.16) 67%, rgba(7,24,43,.05) 100%),
-    linear-gradient(180deg, rgba(7,24,43,.24) 0%, transparent 20%),
-    linear-gradient(0deg, rgba(7,24,43,.22) 0%, transparent 28%);
+    linear-gradient(90deg, rgba(7,24,43,.82) 0%, rgba(7,24,43,.64) 32%, rgba(7,24,43,.36) 62%, rgba(7,24,43,.1) 88%, rgba(7,24,43,0) 100%),
+    linear-gradient(180deg, rgba(7,24,43,.24) 0%, transparent 24%),
+    linear-gradient(0deg, rgba(7,24,43,.22) 0%, transparent 30%);
 }
 @media (max-width: 720px) {
   .hero__image { object-position: 58% center; }
@@ -958,8 +1065,10 @@ li { margin-bottom: var(--sp-2); }
 .hero__photo-tag { z-index: 2; }
 .hero .eyebrow {
   color: var(--c-green-500);
+  padding-left: 0;
+  margin-bottom: 10px;
 }
-.hero .eyebrow::before { background: var(--c-green-500); }
+.hero .eyebrow::before { display: none; }
 .hero__grid {
   display: block;
   width: 100%;
@@ -967,12 +1076,13 @@ li { margin-bottom: var(--sp-2); }
 }
 .hero__title {
   color: #fff;
-  font-family: var(--font-serif);
+  font-family: 'Playfair Display', Georgia, serif;
   font-weight: 500;
-  font-size: clamp(2rem, 5.4vw, 4rem);
-  line-height: 1.08;
+  font-size: clamp(2.5rem, 8.4vw, 6.35rem);
+  line-height: 1.05;
   letter-spacing: 0;
-  margin-bottom: var(--sp-5);
+  margin-top: -2px;
+  margin-bottom: 20px;
   /* Keep Norwegian compound words ("notimpregnering", "oppdrettsnæringen")
      whole — browser auto-hyphenation makes them look like two separate words.
      overflow-wrap is the safety net for ultra-narrow viewports. */
@@ -986,27 +1096,38 @@ li { margin-bottom: var(--sp-2); }
   font-weight: inherit;
 }
 .hero__lead {
-  font-size: clamp(1.05rem, 1.6vw, 1.25rem);
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+  font-size: clamp(1.1rem, 1.7vw, 1.313rem);
   color: #fff;
   margin-bottom: var(--sp-6);
-  max-width: 56ch;
-  line-height: 1.55;
+  max-width: 46ch;
+  line-height: 1.6;
   overflow-wrap: break-word;
-  hyphens: auto;
+  hyphens: manual;
 }
 
-/* Phone viewports: drop the eyebrow and secondary CTA so the headline, lead,
-   and primary action keep clean line breaks. */
+/* Phone viewports: drop the eyebrow; stack both CTAs full-width so they are
+   identical in size. */
 @media (max-width: 480px) {
   .hero .eyebrow { display: none; }
-  .hero__cta-row .btn--ghost,
-  .hero__cta-row .btn--ghost-light { display: none; }
+  .hero__cta-row { flex-direction: column; align-items: stretch; }
+  .hero__cta-row .btn { width: 100%; justify-content: center; }
 }
 .hero__cta-row {
   display: flex;
   gap: var(--sp-3);
   flex-wrap: wrap;
   margin-bottom: var(--sp-6);
+}
+/* Større hero-knapper som matcher den forstørrede hero-teksten */
+.hero__cta-row .btn {
+  font-size: var(--fs-base);
+  padding: 17px 32px;
+}
+.hero__cta-row .btn .btn__arrow {
+  width: 19px;
+  height: 12px;
 }
 .hero__meta {
   display: grid;
@@ -1134,6 +1255,8 @@ li { margin-bottom: var(--sp-2); }
 .page-banner__crumb span { color: rgba(216,226,236,.4); }
 .page-banner__title {
   color: #fff;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 500;
   font-size: clamp(2rem, 4vw, 3rem);
   margin: 0 0 var(--sp-4);
   max-width: 24ch;
@@ -1788,7 +1911,10 @@ li { margin-bottom: var(--sp-2); }
   border-bottom: 1px solid var(--c-border);
   padding-bottom: var(--sp-3);
 }
-.products-section__head h3 { font-size: 1.4rem; margin: 0; color: var(--c-navy-800); }
+.products-section__head h3 { font-family: 'Playfair Display', Georgia, serif; font-weight: 500; font-size: 1.5rem; margin: 0; color: var(--c-navy-800); }
+/* Media variants shared with the home product selector */
+.product-card__media--contain { background: #fff; display: flex; align-items: center; justify-content: center; }
+.product-card__media--contain img { object-fit: contain; padding: 8px; mix-blend-mode: multiply; }
 .products-section__head small {
   font-size: 11px;
   text-transform: uppercase;
@@ -2026,13 +2152,15 @@ li { margin-bottom: var(--sp-2); }
 /* Brand text over hero/banner: slightly brighter green so it stays readable
    against the video. Brand identity stays consistent. */
 .site-header:not(.is-scrolled) .brand-text {
-  color: #00a043;
+  color: #1ec85f;
+  text-shadow: 0 1px 12px rgba(0,0,0,.4), 0 0 2px rgba(0,0,0,.25);
 }
 
 .has-light-hero .site-header:not(.is-scrolled) {
-  background: rgba(255,255,255,.97);
-  backdrop-filter: blur(10px);
-  border-bottom-color: var(--c-border);
+  background: rgba(255,255,255,.28);
+  backdrop-filter: blur(12px) saturate(120%);
+  -webkit-backdrop-filter: blur(12px) saturate(120%);
+  border-bottom-color: rgba(255,255,255,.45);
 }
 .has-light-hero .site-header:not(.is-scrolled)::before {
   opacity: 0;
