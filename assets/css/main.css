@@ -236,7 +236,7 @@
 
 /* ---------- Reset ------------------------------------------------------ */
 *,*::before,*::after { box-sizing: border-box; }
-html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; overflow-x: hidden; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; overflow-x: hidden; scrollbar-gutter: stable; }
 body {
   margin: 0;
   font-family: var(--font-sans);
@@ -743,9 +743,18 @@ li { margin-bottom: var(--sp-2); }
 .hero--photo-first .hero__image {
   animation: heroImageSettle 6.5s cubic-bezier(.16,.55,.22,1) both;
 }
-.hero--photo-first .hero__title,
-.hero--photo-first .hero__lead,
-.hero--photo-first .hero__cta-row {
+/* Text stays hidden (only when JS runs) until webfonts are ready, so the
+   animation never shows a mid-fade font swap. A JS timeout adds .fonts-ready
+   after 900ms regardless, so text can never stay invisible. */
+.js .hero--photo-first .hero__title,
+.js .hero--photo-first .hero__lead,
+.js .hero--photo-first .hero__cta-row { opacity: 0; }
+.fonts-ready .hero--photo-first .hero__title,
+.fonts-ready .hero--photo-first .hero__lead,
+.fonts-ready .hero--photo-first .hero__cta-row,
+html:not(.js) .hero--photo-first .hero__title,
+html:not(.js) .hero--photo-first .hero__lead,
+html:not(.js) .hero--photo-first .hero__cta-row {
   animation: heroMistRise 1.2s cubic-bezier(.22,.61,.21,1) both;
 }
 .hero--photo-first .hero__title   { animation-delay: .15s; }
@@ -758,6 +767,9 @@ li { margin-bottom: var(--sp-2); }
   .hero--photo-first .hero__lead,
   .hero--photo-first .hero__cta-row,
   .hero--photo-first .hero__scroll { animation: none; }
+  .js .hero--photo-first .hero__title,
+  .js .hero--photo-first .hero__lead,
+  .js .hero--photo-first .hero__cta-row { opacity: 1; }
 }
 .hero__brand {
   display: inline-block;
